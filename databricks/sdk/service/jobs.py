@@ -662,7 +662,7 @@ class JobCluster:
     def as_dict(self) -> dict:
         body = {}
         if self.job_cluster_key is not None: body['job_cluster_key'] = self.job_cluster_key
-        if self.new_cluster: body['new_cluster'] = self.new_cluster.as_dict()
+        if self.new_cluster:  body.update(self.new_cluster.as_dict())
         return body
 
     @classmethod
